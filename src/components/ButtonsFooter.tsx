@@ -21,8 +21,9 @@ const Buttons = () => {
     navigate(urlPath)
     dispatch(setActiveStep(currentStep.value + 1))
   }
+
   return (
-    <section className={`flex flex-row gap-4 ${currentStep.value === 1 ? 'justify-end' : 'justify-between'} text-md`}>
+    <section className={`flex-row gap-4 ${currentStep.value === 1 ? 'justify-end flex' : 'justify-between flex'} text-md`}>
       {
         currentStep.value === 1 || currentStep.value === 4 ? (
           <>
