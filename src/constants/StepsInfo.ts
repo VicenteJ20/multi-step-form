@@ -22,21 +22,25 @@ export const StepsSidebarInfo = [
   {
     index: 1,
     url: '/your-info',
-    title: 'YOUR INFO'
+    title: 'YOUR INFO',
+    slice: 'step1'
   },
   {
     index: 2,
     url: '/select-plan',
-    title: 'SELECT PLAN'
+    title: 'SELECT PLAN',
+    slice: 'step2'
   },
   {
     index: 3,
     url: '/add-ons',
-    title: 'ADD-ONS'
+    title: 'ADD-ONS',
+    slice: 'step3'
   },
   {
     index: 4,
     url: '/summary',
-    title: 'SUMMARY'
+    title: 'SUMMARY',
+    slice: 'step4'
   }
 ]
