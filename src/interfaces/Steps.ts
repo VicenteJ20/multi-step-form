@@ -7,3 +7,7 @@ export interface Step1Props {
 export interface ActiveStepProps {
   value?: number;
 }
+
+export interface Step1PropsState {
+  step1: Step1Props;
+}

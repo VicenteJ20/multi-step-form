@@ -21,7 +21,7 @@ export const Step4 = {
 export const StepsSidebarInfo = [
   {
     index: 1,
-    url: '/',
+    url: '/your-info',
     title: 'YOUR INFO'
   },
   {
