@@ -5,7 +5,7 @@ import { Step1Props } from '../../interfaces/Steps'
 const initialState: Step1Props = {
   name: '',
   email_address: '',
-  phone_number: '',
+  phone_number: ''
 }
 
 export const Step1Slice = createSlice({
@@ -20,7 +20,7 @@ export const Step1Slice = createSlice({
     },
     setPhoneNumber: (state, action: PayloadAction<string>) => {
       state.phone_number = action.payload
-    },
+    }
   }
 })
 

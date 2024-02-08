@@ -21,7 +21,7 @@ const LayoutForm = ({ children }: LayoutProps) => {
     <section className='min-h-screen w-full bg-[#eef5ff] flex flex-col gap-4 justify-center p-8'>
       <div className='bg-white min-h-[43rem] max-w-[72rem] p-8 mx-auto shadow-xl shadow-zinc-300 rounded-3xl grid grid-cols-7 gap-4 relative'>
         <SideBar /> 
-        <div className='col-span-5 px-24 py-6 flex flex-col gap-4 justify-between'>
+        <div className='col-span-5 px-24 py-6 flex flex-col gap-14'>
           {children}
         </div>
       </div>

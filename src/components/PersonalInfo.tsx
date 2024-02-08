@@ -1,55 +1,74 @@
 import { Field, Form, Formik, ErrorMessage } from 'formik'
-import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Step1PropsState } from '../interfaces/Steps'
+import { Step1Props, Step1PropsState } from '../interfaces/Steps'
 import { setName, setEmailAddress, setPhoneNumber } from '../redux/slices/Step1Slice'
+import { Step1Schema } from '../schemas/Step1Scheme'
+import { ButtonsFooter } from './ButtonsFooter'
+import { NextBtn } from './NextBtn'
+import { useNavigate } from 'react-router-dom'
+import { StepsSidebarInfo } from '../constants/StepsInfo'
 
 const PersonalInfoForm = () => {
-  
+
   const step1redux = useSelector((state: Step1PropsState) => state.step1)
-
-  const [name, setNameState] = useState(step1redux.name) 
-  const [email, setEmailState] = useState(step1redux.email_address)
-  const [phone, setPhoneState] = useState(step1redux.phone_number)
+  const currentStep = useSelector((state: {activeState: number}) => state.activeState) as unknown as { value: number }
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+ 
+  const onSubmit = (values: Step1Props) => {
+    dispatch(setName(values.name))
+    dispatch(setEmailAddress(values.email_address))
+    dispatch(setPhoneNumber(values.phone_number))
 
-  const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNameState(e.target.value)
-    dispatch(setName(e.target.value))
-  }
+    const urlPath = StepsSidebarInfo.find((item) => item.index === currentStep.value + 1)?.url as string
 
-  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmailState(e.target.value)
-    dispatch(setEmailAddress(e.target.value))
-  }
-
-  const handlePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPhoneState(e.target.value)
-    dispatch(setPhoneNumber(e.target.value))
+    navigate(urlPath)
   }
 
   return (
     <Formik
       initialValues={step1redux}
-      onSubmit={() => {}}
+      validationSchema={Step1Schema}
+      validationOnChange={true}
+      onSubmit={onSubmit}
     >
-      {() => (
-        <Form className='flex flex-col gap-4'>
-          <div className='flex flex-col gap-3'>
-            <label className='font-semibold text-lg text-blue-900' htmlFor={'name'}>Name</label>
-            <Field onChange={handleName} value={name} type='text' name='name' placeholder='e.g. Vicente Jorquera' className='border border-zinc-400 px-4 py-2 rounded-lg text-xl font-semibold outline-violet-800' />
-            <ErrorMessage name='name' component='div' />
-          </div>
-          <div className='flex flex-col gap-3'>
-            <label className='font-semibold text-lg text-blue-900' htmlFor={'name'}>Email Address</label>
-            <Field onChange={handleEmail} value={email} type='text' name='email' placeholder='e.g. vicente@jorquera.com' className='border border-zinc-400 px-4 py-2 rounded-lg text-xl font-semibold outline-violet-800' />
-            <ErrorMessage name='email' component='div' />
-          </div>
-          <div className='flex flex-col gap-3'>
-            <label className='font-semibold text-lg text-blue-900' htmlFor={'name'}>Phone Number</label>
-            <Field onChange={handlePhone} value={phone} type='number' name='phone' placeholder='e.g. +1 234 567 890' className='border border-zinc-400 px-4 py-2 rounded-lg text-xl font-semibold outline-violet-800' />
-            <ErrorMessage name='phone' component='div' />
-          </div>
+      {({ getFieldProps, errors, touched }) => (
+        <Form className='flex flex-col justify-between gap-4 h-full'>
+          <section className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-3'>
+              <div className='flex flex-row gap-2 justify-between w-full items-center'>
+                <label className='font-semibold text-lg text-blue-900' htmlFor={'name'}>Name</label>
+                <p className='font-semibold text-red-500'><ErrorMessage name='name' component='span' /></p>
+              </div>
+              <Field
+                {...getFieldProps('name')}
+                className={`border px-4 py-2 rounded-lg text-xl font-semibold outline-violet-800 ${errors.name && touched.name ? 'border-red-500 border-2' : 'border-zinc-400'}`} placeholder='e.g. Vicente Jorquera' type='text' name='name'
+              />
+            </div>
+            <div className='flex flex-col gap-3'>
+              <div className='flex flex-row gap-2 justify-between w-full items-center'>
+                <label className='font-semibold text-lg text-blue-900' htmlFor={'email_address'}>Email Address</label>
+                <p className='font-semibold text-red-500'><ErrorMessage name='email_address' component='span' /></p>
+              </div>
+              <Field
+                {...getFieldProps('email_address')}
+                className={`border px-4 py-2 rounded-lg text-xl font-semibold outline-violet-800 ${errors.email_address && touched.email_address ? 'border-red-500 border-2' : 'border-zinc-400'}`} placeholder='e.g. vicente@jorquera.com' type='text' name='email_address'
+              />
+            </div>
+            <div className='flex flex-col gap-3'>
+              <div className='flex flex-row gap-2 justify-between w-full items-center'>
+                <label className='font-semibold text-lg text-blue-900' htmlFor={'phone_number'}>Phone Number</label>
+                <p className='font-semibold text-red-500'><ErrorMessage name='phone_number' component='span' /></p>
+              </div>
+              <Field
+                {...getFieldProps('phone_number')}
+                className={`border px-4 py-2 rounded-lg text-xl font-semibold outline-violet-800 ${errors.phone_number && touched.phone_number ? 'border-red-500 border-2' : 'border-zinc-400'}`} placeholder='e.g. +56 9 12 34 56 78' type='text' name='phone_number'
+              />
+            </div>
+          </section>
+          <ButtonsFooter>
+            <NextBtn />
+          </ButtonsFooter>
         </Form>
       )}
     </Formik>
