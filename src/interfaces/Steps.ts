@@ -11,3 +11,7 @@ export interface ActiveStepProps {
 export interface Step1PropsState {
   step1: Step1Props;
 }
+
+export interface StateStepProps {
+  step1: Step1Props;
+}
