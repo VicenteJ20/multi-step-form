@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import  bgSidebar from '../assets/bg-sidebar-desktop.svg'
+import  bgSidebar from '/assets/bg-sidebar-desktop.svg'
 import { StepsSidebarInfo } from '../constants/StepsInfo'
 
 const SideBar = () => {

@@ -44,3 +44,21 @@ export const StepsSidebarInfo = [
     slice: 'step4'
   }
 ]
+
+export const PlanCards = [
+  {
+    icon: '/assets/icon-arcade.svg',
+    title: 'Arcade',
+    price: 9
+  },
+  {
+    icon: '/assets/icon-advanced.svg',
+    title: 'Advanced',
+    price: 12
+  },
+  {
+    icon: '/assets/icon-pro.svg',
+    title: 'Pro',
+    price: 15
+  }
+]

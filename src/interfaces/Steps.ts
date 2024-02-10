@@ -15,3 +15,16 @@ export interface Step1PropsState {
 export interface StateStepProps {
   step1: Step1Props;
 }
+
+export interface Step2CardProps {
+  icon: string;
+  title: string;
+  price: number;
+}
+
+export interface Step2SliceProps {
+  plan: {
+    selectedPlan: string;
+    type: string;
+  }
+}
