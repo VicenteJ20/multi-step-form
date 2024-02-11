@@ -6,6 +6,7 @@ import { Step2 } from "../constants/StepsInfo"
 import { PlanCards } from "../constants/StepsInfo"
 
 const SelectPlanPage = () => {
+
   return (
     <LayoutForm>
       <Header title={Step2.title} subtitle={Step2.description} />
