@@ -17,7 +17,7 @@ const BackBtn = () => {
     dispatch(setActiveStep(currentStep.value - 1))
   }
   return (
-    <button onClick={handleBack} type='button' className='text-blue-900 hover:text-cyan-600 transition-all duration-300 ease-in-out font-semibold rounded-lg py-3 px-8'>Back</button>
+    <button onClick={handleBack} type='button' className='text-gray-400 hover:text-cyan-600 transition-all duration-300 ease-in-out font-semibold rounded-lg py-3 px-8'>Go Back</button>
   )
 }
 
