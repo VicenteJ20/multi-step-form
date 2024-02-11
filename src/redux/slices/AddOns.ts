@@ -13,7 +13,7 @@ const AddOns = createSlice({
       state.selectedAddOns.push(action.payload)
     },
     removeAddOn: (state, action) => {
-      state.selectedAddOns = state.selectedAddOns.filter((item) => item.title !== action.payload)
+      state.selectedAddOns = state.selectedAddOns.filter((item) => item.title !== action.payload.title)
     }
   }
 })
