@@ -43,3 +43,7 @@ export interface Step3SmallProps {
 export interface Step3SliceProps {
   selectedAddOns: Step3SmallProps[];
 }
+
+export interface Step3PropsState {
+  addons: Step3SliceProps;
+}
