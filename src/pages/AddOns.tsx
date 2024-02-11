@@ -9,6 +9,7 @@ const AddOnsPage = () => {
   return (
     <LayoutForm>
       <Header title={Step3.title} subtitle={Step3.description} />
+      
       <ButtonsFooter>
         <BackBtn />
         <NextBtn />
