@@ -28,3 +28,18 @@ export interface Step2SliceProps {
     type: string;
   }
 }
+
+export interface Step3OptionProps {
+  title: string;
+  description: string;
+  price: number;
+}
+
+export interface Step3SmallProps {
+  title: string;
+  price: number;
+}
+
+export interface Step3SliceProps {
+  selectedAddOns: Step3SmallProps[];
+}
