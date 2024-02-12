@@ -81,3 +81,9 @@ export const Step3InfoOptions = [
     price: 2
   }
 ]
+
+export const Step5Info = {
+  icon: '/assets/icon-thank-you.svg',
+  title: 'Thank you!',
+  description: 'Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.'
+}

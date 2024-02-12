@@ -57,7 +57,7 @@ const Summary = () => {
       </div>
       <div className='flex flex-row gap-4 justify-between px-6 py-2'>
         <h3 className=' text-zinc-500 font-medium'>Total ({selectedPlan.selectedPlan === 'monthly' ? 'per month' : 'per year'})</h3>
-        <p className='text-lg'>+{total}{selectedPlan.selectedPlan === 'monthly' ? '/mo' : '/yr'}</p>
+        <p className='text-lg font-bold text-purple-700'>+{total}{selectedPlan.selectedPlan === 'monthly' ? '/mo' : '/yr'}</p>
       </div>
     </section>
   )
