@@ -17,6 +17,7 @@ const PlanCard = ({ icon, title, price }: Step2CardProps) => {
 
   const handleSelectPlanType = () => {
     dispatch(setPlanType(title.toLocaleLowerCase()))
+    dispatch(setPlanPrice(price))
   }
 
   return (
