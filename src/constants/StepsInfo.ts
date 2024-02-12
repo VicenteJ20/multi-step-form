@@ -14,8 +14,8 @@ export const Step3 = {
 }
 
 export const Step4 = {
-  title: 'Thank you!',
-  description: 'Thanks for confirming your subscription! We hope you have fun using. If you ever need support, please feel free to email us at support@loremgaming.com.'
+  title: 'Finishing up',
+  description: 'Double-check everything looks OK before confirming.'
 }
 
 export const StepsSidebarInfo = [

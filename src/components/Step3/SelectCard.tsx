@@ -1,19 +1,21 @@
 import { useState } from "react";
-import { Step2SliceProps, Step3OptionProps } from "../../interfaces/Steps";
+import { Step2SliceProps, Step3OptionProps, Step3PropsState } from "../../interfaces/Steps";
 import { useSelector, useDispatch } from "react-redux";
 import { addNewAddOn, removeAddOn } from "../../redux/slices/AddOns";
 
 const SelectCard = ({ title, description, price }: Step3OptionProps) => {
   const paymentType = useSelector((state: Step2SliceProps) => state.plan.selectedPlan)
+  const selectedAddOns = useSelector((state: Step3PropsState) => state.addons.selectedAddOns)
+  const alreadySelected = selectedAddOns.find((item) => item.title === title)
+
   const dispatch = useDispatch()
-  const [selected, setSelected] = useState(false)
+  const [selected, setSelected] = useState(alreadySelected ? true : false)
 
   const handleClick = () => {
 
     if (!selected) {
       dispatch(addNewAddOn({ title, price }))
     } else {
-      console.log('remove')
       dispatch(removeAddOn({ title, price }))
     }
 

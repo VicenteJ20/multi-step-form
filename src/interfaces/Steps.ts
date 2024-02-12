@@ -26,6 +26,7 @@ export interface Step2SliceProps {
   plan: {
     selectedPlan: string;
     type: string;
+    price: number;
   }
 }
 
