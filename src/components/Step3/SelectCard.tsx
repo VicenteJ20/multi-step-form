@@ -35,7 +35,7 @@ const SelectCard = ({ title, description, price }: Step3OptionProps) => {
       </div>
       <div>
         <p className='font-semibold text-purple-700'>
-          {paymentType === 'monthly' ? `$${price}/mo` : `$${price * 10}/yr`}
+          +${paymentType === 'monthly' ? `${price}/mo` : `${price * 10}/yr`}
         </p>
       </div>
     </div>
