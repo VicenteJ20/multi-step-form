@@ -18,10 +18,10 @@ const LayoutForm = ({ children }: LayoutProps) => {
   }, [location, dispatch])
 
   return (
-    <section className='min-h-screen w-full bg-[#eef5ff] flex flex-col gap-4 justify-center p-8'>
-      <div className='bg-white min-h-[43rem] max-w-[72rem] p-8 mx-auto shadow-xl shadow-zinc-300 rounded-3xl grid grid-cols-7 gap-4 relative'>
+    <section className='min-h-screen w-full bg-[#eef5ff] flex flex-col gap-4 justify-center lg:p-8'>
+      <div className=' lg:bg-white min-h-screen lg:min-h-[43rem] lg:max-w-[72rem] lg:p-8 mx-auto shadow-xl shadow-zinc-300 lg:rounded-3xl grid grid-cols-1 lg:grid-cols-7 gap-4'>
         <SideBar /> 
-        <div className='col-span-5 px-24 py-6 flex flex-col gap-14'>
+        <div className='-mt-[70%] md:-mt-[20%] lg:mt-0 bg-white z-20 lg:col-span-5 h-fit lg:min-h-full px-6 mx-6 lg:mx-0 lg:px-24 py-8 lg:py-6 flex flex-col gap-8 lg:gap-14 rounded-lg'>
           {children}
         </div>
       </div>

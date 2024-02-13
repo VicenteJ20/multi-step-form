@@ -34,7 +34,7 @@ const PlanLayout = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <section className='h-full flex flex-col gap-4 justify-between relative'>
+    <section className='h-full flex flex-col gap-4 justify-between md:relative'>
       <span className={`${!alert && 'hidden' } text-red-500 font-semibold absolute -top-8`}>You must select a plan</span>
       {children}
       <PlanSwitcher />
