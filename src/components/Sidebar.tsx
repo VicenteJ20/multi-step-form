@@ -1,15 +1,27 @@
 import { useSelector } from 'react-redux'
 import  bgSidebar from '/assets/bg-sidebar-desktop.svg'
+import bgMobile from '/assets/bg-sidebar-mobile.svg'
 import { StepsSidebarInfo } from '../constants/StepsInfo'
+import { useState, useEffect } from 'react'
 
 const SideBar = () => {
   const currentStep = useSelector((state: {activeState: number}) => state.activeState) as unknown as { value: number }
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
+  const image = windowWidth <= 768 ? bgMobile : bgSidebar  
+
+  useEffect(() => {
+    const handleRezise = () => setWindowWidth(window.innerWidth)
+    window.addEventListener('resize', handleRezise)
+    return () => window.removeEventListener('resize', handleRezise)
+  }, [windowWidth])
   
   return (
     <div className="h-44 top-0 lg:min-h-full lg:rounded-xl lg:col-span-2 relative bg-red-500">
       <img
         className="object-cover h-44 top-0 left-0 object-bottom lg:min-h-full lg:rounded-xl w-full"
-        src={bgSidebar}
+        src={image}
         alt='background sidebar steps'
       />
       <ul className='absolute top-6 left-4 right-4 lg:top-10 lg:left-10 flex flex-row items-center lg:items-start justify-center lg:justify-start lg:flex-col gap-4'>
