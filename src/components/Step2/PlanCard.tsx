@@ -21,9 +21,9 @@ const PlanCard = ({ icon, title, price }: Step2CardProps) => {
   }
 
   return (
-    <div onClick={handleSelectPlanType} className={`border-2 p-4 rounded-lg flex flex-col gap-14 transition-all duration-300 ease-in-out hover:border-purple-900 hover:bg-purple-50 cursor-pointer ${type === title.toLocaleLowerCase() ? 'border-purple-900 bg-purple-50' : ''}`}>
+    <div onClick={handleSelectPlanType} className={`border-2 p-4 rounded-lg flex lg:flex-col gap-4 lg:gap-14 transition-all duration-300 ease-in-out hover:border-purple-900 hover:bg-purple-50 cursor-pointer ${type === title.toLocaleLowerCase() ? 'border-purple-900 bg-purple-50' : ''}`}>
       <img src={icon} alt={title} className='max-w-10' />
-      <div className='flex flex-col gap-1.5 w-full'>
+      <div className='flex flex-col lg:gap-1.5 w-full'>
         <h3 className="font-semibold text-blue-950 text-lg">{title}</h3>
         <p className='text-gray-500 text-md font-normal'>
           {

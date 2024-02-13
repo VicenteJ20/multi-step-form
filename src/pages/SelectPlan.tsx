@@ -11,7 +11,7 @@ const SelectPlanPage = () => {
     <LayoutForm>
       <Header title={Step2.title} subtitle={Step2.description} />
       <PlanLayout>
-        <div className='grid grid-cols-3 gap-8 w-full'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 w-full'>
           {
             PlanCards && PlanCards.map((item, index) => (
               <PlanCard key={index} icon={item.icon} title={item.title} price={item.price} />
