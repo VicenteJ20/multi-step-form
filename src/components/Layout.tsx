@@ -25,7 +25,7 @@ const LayoutForm = ({ children }: LayoutProps) => {
     <section className='min-h-screen w-full bg-[#eef5ff] flex flex-col gap-4 justify-center lg:p-8'>
       <div className=' lg:bg-white min-h-screen w-full lg:min-h-[43rem] lg:max-w-[72rem] lg:p-8 mx-auto shadow-xl shadow-zinc-300 lg:rounded-3xl grid grid-cols-1 gap-0 lg:grid-cols-7 lg:gap-4'>
         <SideBar /> 
-        <div className={`-mt-[10rem] md:-mt-[20%] lg:mt-0 bg-white z-20 lg:col-span-5 ${step === 2 && plan.selectedPlan === 'yearly' ? 'h-fit md:h-full' : 'h-[35rem]'} md:min-h-full px-6 mx-6 lg:mx-0 lg:px-24 py-8 lg:py-6 flex flex-col gap-8 lg:gap-14 rounded-lg mb-20 lg:mb-0`}>
+        <div className={`-mt-[10rem] md:-mt-[20%] lg:mt-0 bg-white z-20 lg:col-span-5 h-fit md:h-full px-6 mx-6 lg:mx-0 lg:px-24 py-8 lg:py-6 flex flex-col gap-8 lg:gap-14 rounded-lg mb-20 lg:mb-0`}>
           {children}
         </div>
       </div>

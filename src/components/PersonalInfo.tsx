@@ -37,32 +37,32 @@ const PersonalInfoForm = () => {
           <section className='flex flex-col gap-4'>
             <div className='flex flex-col gap-3'>
               <div className='flex flex-row gap-2 justify-between w-full items-center'>
-                <label className='font-semibold text-lg text-blue-900' htmlFor={'name'}>Name</label>
+                <label className='font-semibold lg:text-lg text-blue-900' htmlFor={'name'}>Name</label>
                 <p className='font-semibold text-red-500'><ErrorMessage name='name' component='span' /></p>
               </div>
               <Field
                 {...getFieldProps('name')}
-                className={`border px-4 py-2 rounded-lg text-xl font-semibold outline-violet-800 ${errors.name && touched.name ? 'border-red-500 border-2' : 'border-zinc-400'}`} placeholder='e.g. Vicente Jorquera' type='text' name='name'
+                className={`border px-4 py-2 rounded-lg lg:text-xl font-semibold outline-violet-800 ${errors.name && touched.name ? 'border-red-500 border-2' : 'border-zinc-400'}`} placeholder='e.g. Vicente Jorquera' type='text' name='name'
               />
             </div>
             <div className='flex flex-col gap-3'>
               <div className='flex flex-row gap-2 justify-between w-full items-center'>
-                <label className='font-semibold text-lg text-blue-900' htmlFor={'email_address'}>Email Address</label>
+                <label className='font-semibold lg:text-lg text-blue-900' htmlFor={'email_address'}>Email Address</label>
                 <p className='font-semibold text-red-500'><ErrorMessage name='email_address' component='span' /></p>
               </div>
               <Field
                 {...getFieldProps('email_address')}
-                className={`border px-4 py-2 rounded-lg text-xl font-semibold outline-violet-800 ${errors.email_address && touched.email_address ? 'border-red-500 border-2' : 'border-zinc-400'}`} placeholder='e.g. vicente@jorquera.com' type='text' name='email_address'
+                className={`border px-4 py-2 rounded-lg lg:text-xl font-semibold outline-violet-800 ${errors.email_address && touched.email_address ? 'border-red-500 border-2' : 'border-zinc-400'}`} placeholder='e.g. vicente@jorquera.com' type='text' name='email_address'
               />
             </div>
             <div className='flex flex-col gap-3'>
               <div className='flex flex-row gap-2 justify-between w-full items-center'>
-                <label className='font-semibold text-lg text-blue-900' htmlFor={'phone_number'}>Phone Number</label>
+                <label className='font-semibold lg:text-lg text-blue-900' htmlFor={'phone_number'}>Phone Number</label>
                 <p className='font-semibold text-red-500'><ErrorMessage name='phone_number' component='span' /></p>
               </div>
               <Field
                 {...getFieldProps('phone_number')}
-                className={`border px-4 py-2 rounded-lg text-xl font-semibold outline-violet-800 ${errors.phone_number && touched.phone_number ? 'border-red-500 border-2' : 'border-zinc-400'}`} placeholder='e.g. +56 9 12 34 56 78' type='text' name='phone_number'
+                className={`border px-4 py-2 rounded-lg lg:text-xl font-semibold outline-violet-800 ${errors.phone_number && touched.phone_number ? 'border-red-500 border-2' : 'border-zinc-400'}`} placeholder='e.g. +56 9 12 34 56 78' type='text' name='phone_number'
               />
             </div>
           </section>
