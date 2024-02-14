@@ -34,7 +34,7 @@ const PlanCard = ({ icon, title, price }: Step2CardProps) => {
             )
           }
         </p>
-        <p className='absolute lg:relative  bottom-0.5  right-2 lg:right-0  lg:bottom-0 text-blue-900 font-medium text-sm bg-emerald-500'>
+        <p className='absolute lg:relative  bottom-0.5  right-2 lg:right-0  lg:bottom-0 text-blue-900 font-medium text-sm'>
           {selectedPlan === 'yearly' && '2 months free'}
         </p>
       </div>

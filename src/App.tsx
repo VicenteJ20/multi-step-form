@@ -6,7 +6,7 @@ import YourInfo from './pages/YourInfo';
 
 const App = () => {
   return (
-    <>
+    <section>
       <Routes>
         <Route path='/' element={<Navigate to='/your-info' />} />
         <Route path='/your-info' element={<YourInfo />} />
@@ -14,7 +14,9 @@ const App = () => {
         <Route path='/add-ons' element={<AddOnsPage />} />
         <Route path='/summary' element={<SummaryPage />} />
       </Routes>
-    </>
+
+      <span className='hidden text-center text-gray-500 text-sm font-normal'>© 2021 All rights reserved</span>
+    </section>
   )
 }
 
